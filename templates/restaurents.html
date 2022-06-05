@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Restaurent</th>
+        <th>Description</th>
+        <th>Posts</th>
+        <th>Foods</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for restaurent in restos %}
+        <tr>
+          <td>
+            <a href="">{{ restaurent.name }}</a>
+          </td>
+          <td>
+            <small class="text-muted d-block">{{ restaurent.description }}</small>
+          </td>
+          <td class="align-middle">0</td>
+          <td class="align-middle">0</td>
+          <td></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

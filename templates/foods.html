@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+  <a  href="/addfood"><button class="btn btn-primary">Add Food</button></a><br/>
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Food</th>
+        <th>Description</th>
+        <th>Posts</th>
+        <th>Restaurents</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for food in foods %}
+        <tr>
+          <td>
+            <a href="">{{ food.name }}</a>
+          </td>
+          <td>
+            <small class="text-muted d-block">{{ food.description }}</small>
+          </td>
+          <td class="align-middle">0</td>
+          <td class="align-middle">0</td>
+          <td></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

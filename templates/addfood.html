@@ -1,0 +1,25 @@
+    {% extends 'base.html' %}
+    {% load static %}
+      <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+    s
+{% block content %}
+  <div>
+      <h1>Add Food</h1>
+      <form mrthod="POST" class="form-control" style="background-color: powderblue">
+          <div>
+            <label for="">Food Name</label>
+            <input type="text" id="name" name="name" class="form-control">
+          </div>
+          <div>
+            <label for="">Restaurant</label>
+            <input type="text" id="restaurant" name="restaurant" class="form-control">
+          </div>
+          <div>
+            <label for="">Descrption</label>
+            <input type="text" id="description" name="description" class="form-control">
+          </div>
+          <br/>
+          <button class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+{% endblock %}
