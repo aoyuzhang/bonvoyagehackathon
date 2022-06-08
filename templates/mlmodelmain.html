@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
+  <img class="card-img-top" src="{% static 'img/fake_news.png' %}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">Fake News Detector</h5>
     <p class="card-text">Want to view authentic news? This app will help you identify weather the content of the new is authentic or not! Give it a try!</p>

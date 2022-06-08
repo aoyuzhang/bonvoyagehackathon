@@ -13,7 +13,7 @@ def signup(request):
       user = form.save()
       messages.success(request, 'Account was created for ' + str(user))
       auth_login(request, user)
-      return redirect('/')
+      return redirect('home')
     else:
       return render(request, 'signup.html', {'form': form})
   else:
