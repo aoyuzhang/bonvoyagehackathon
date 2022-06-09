@@ -20,15 +20,18 @@ from worldmap import views as worldmapviews
 from accounts import views as accounts_views
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import views as auth_views
+from django.urls import include
+
 
 urlpatterns = [
+    path('catalog/', include('catalog.urls')),
+    path('mlmodels/', include('mlmodels.urls')),
+
     path('', worldmapviews.home,name = 'home'),
     path('admin/', admin.site.urls, name= "adminweb"),
     path('resto/', worldmapviews.resto, name="resto"),
     path('food/', worldmapviews.food, name="food"),
-    path('mlmodels/', views.mlmodelhome, name='mlhome'),
-    path('mlmodels/fakenews/',views.fakenews, name='fakenews'),
-    path('mlmodels/fakenews/result/', views.fakenewsresult, name="fakenewsresult"),
+
     
     path('addfood/', worldmapviews.addfood, name="addfood"),
     path('signup/', csrf_exempt(accounts_views.signup), name='signup'),

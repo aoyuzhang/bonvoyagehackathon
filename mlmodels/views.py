@@ -4,10 +4,11 @@ import os
 import cohere
 from cohere.classify import Example
 
+
+def index(request):
+    return render(request, "mlmodelmain.html")
 # setup cohere api
 co = cohere.Client('RfibZy93rfGcosxAdDkWiPrJ4SY5F29aTGRcxYyY')
-def mlmodelhome(request):
-  return render(request, "mlmodelmain.html")
 
 def fakenews(request):
 	return render(request, "fakenews.html")

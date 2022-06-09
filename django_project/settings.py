@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'worldmap',
     'accounts',
     'widget_tweaks',
+    'catalog.apps.CatalogConfig',
 ]
 
 MIDDLEWARE = [
