@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Bankitem List</h1>
+  {% if bankitem_list %}
+  <ul>
+    {% for bankitem in bankitem_list %}
+      <li>
+        <a href="{{ bankitem.get_absolute_url }}">{{ bankitem.bankItemName }}</a> ({{bankitem.bankItemPrice}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no items in the bank</p>
+  {% endif %}
+{% endblock %}

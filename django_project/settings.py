@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'accounts',
     'widget_tweaks',
     'catalog.apps.CatalogConfig',
+    'localbank.apps.LocalbankConfig',
 ]
 
 MIDDLEWARE = [

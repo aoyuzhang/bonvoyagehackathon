@@ -26,6 +26,7 @@ from django.urls import include
 urlpatterns = [
     path('catalog/', include('catalog.urls')),
     path('mlmodels/', include('mlmodels.urls')),
+    path('localbank/', include('localbank.urls')),
 
     path('', worldmapviews.home,name = 'home'),
     path('admin/', admin.site.urls, name= "adminweb"),
