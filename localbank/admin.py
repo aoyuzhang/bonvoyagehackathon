@@ -7,7 +7,7 @@ from .models import Bankitem
 
 # Define the admin class
 class BankitemAdmin(admin.ModelAdmin):
-    list_display = ('bankItemName', 'bankItemPrice')
+    list_display = ('bankItemName', 'bankItemPrice', 'belongsto')
  # bankItemName = models.CharField(max_length=200)
  #    itemAquiredOn = models.DateTimeField(auto_now_add=False)
  #    bankitemDescription = models.TextField(max_length=1000, help_text='Enter a brief description of the book')

@@ -1,0 +1,19 @@
+{% extends "local_bank_base_generic.html" %}
+
+{% block content %}
+    <h1>My bank items</h1>
+
+    {% if bankiteminstance_list %}
+    <ul>
+
+      {% for bookinst in bankiteminstance_list %}
+      <li>
+        <a href="{% url 'bankitem-detail' bookinst.pk %}">{{bookinst.bankItemName}}</a> ({{ bookinst.bankItemPrice }})
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no books borrowed.</p>
+    {% endif %}
+{% endblock %}

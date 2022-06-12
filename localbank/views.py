@@ -46,3 +46,14 @@ class BankitemDetailView(generic.DetailView):
 	model = Bankitem
 
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+class BankitemsownedByUserListView(LoginRequiredMixin,generic.ListView):
+    """Generic class-based view listing books on loan to current user."""
+    model = Bankitem
+    template_name ='localbank/bankitemins_list_owned_by_user.html'
+    paginate_by = 10
+
+    def get_queryset(self):
+        # return BookInstance.objects.filter(borrower=self.request.user).filter(status__exact='o').order_by('due_back')
+        return Bankitem.objects.filter(belongsto=self.request.user)

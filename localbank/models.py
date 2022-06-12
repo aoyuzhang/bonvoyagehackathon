@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 # class MyModelName(models.Model):
 #     """A typical class defining a model, derived from the Model class."""
@@ -30,10 +31,12 @@ class Bankitem(models.Model):
     itemAquiredOn = models.DateTimeField(auto_now_add=False)
     bankitemDescription = models.TextField(max_length=1000, help_text='Enter a brief description of the book')
     bankItemPrice = models.FloatField(help_text='The price of item when bought')
+    belongsto = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     # bank_item_description = models.CharField(max_length=2000)
 
-    # class Meta:
+    class Meta:
     #     ordering = ['last_name', 'first_name']
+        permissions = (("can_create_item", "set field for a new item"),)
 
     # Foreign Key used because book can only have one author, but authors can have multiple books
     # Author as a string rather than object because it hasn't been declared yet in the file
