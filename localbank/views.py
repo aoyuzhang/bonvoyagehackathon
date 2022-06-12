@@ -10,6 +10,10 @@ def localbank_index(request):
     num_books = Bankitem.objects.all().count()
     # num_instances = BookInstance.objects.all().count()
 
+    # Number of visits to this view, as counted in the session variable.
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
+
     # Available books (status = 'a')
     # num_instances_available = BookInstance.objects.filter(status__exact='a').count()
 
@@ -21,7 +25,8 @@ def localbank_index(request):
         # 'num_instances': num_instances,
         # 'num_instances_available': num_instances_available,
         # 'num_authors': num_authors,
-        'num_bankitems' : num_books
+        'num_bankitems' : num_books,
+        'num_visits' : num_visits,
     }
 
     # Render the HTML template index.html with the data in the context variable

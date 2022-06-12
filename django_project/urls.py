@@ -33,9 +33,11 @@ urlpatterns = [
     path('resto/', worldmapviews.resto, name="resto"),
     path('food/', worldmapviews.food, name="food"),
 
+    path('accounts/', include('django.contrib.auth.urls')),
+
     
-    path('addfood/', worldmapviews.addfood, name="addfood"),
+    # path('addfood/', worldmapviews.addfood, name="addfood"),
     path('signup/', csrf_exempt(accounts_views.signup), name='signup'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    # path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    # path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
 ]

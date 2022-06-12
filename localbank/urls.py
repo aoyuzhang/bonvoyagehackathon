@@ -6,5 +6,4 @@ urlpatterns = [
     path('bankitems/', views.BankitemListView.as_view(), name = 'bankitems'),
     path('bankitem/<int:pk>',views.BankitemDetailView.as_view(), name='bankitem-detail'),
 
-
 ]
